@@ -1,6 +1,6 @@
 {
   "name": "css-grid-template-parser",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "A simple CSS Grid template parser",
   "keywords": [
     "grid",
@@ -17,7 +17,7 @@
   "author": "Garrett Weems <gwgraphicdesign@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/glweems/css-grid-template-parser"
   },
   "license": "MIT",
   "engines": {
@@ -39,7 +39,9 @@
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
     "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "prepush": "npm run test:prod && npm run build",
+    "commitmsg": "commitlint -E HUSKY_GIT_PARAMS"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -135,7 +137,7 @@
     "ts-jest": "^26.4.0",
     "ts-node": "^9.0.0",
     "typedoc": "^0.19.2",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.0-beta"
   },
   "dependencies": {}
 }

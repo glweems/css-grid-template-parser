@@ -21,3 +21,9 @@ export interface Grid {
   height: number;
   areas: Record<string, Area>;
 }
+
+export type Unit = 'fr' | '%' | 'px' | 'vw' | 'vh' | 'em' | 'rem' | 'auto';
+export interface Entry {
+  amount: number;
+  unit: Unit;
+}

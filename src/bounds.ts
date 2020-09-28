@@ -1,24 +1,82 @@
 import { Grid } from './types'
 
-const find = (
+function find(
   fn: (...args: number[]) => number,
   direction: 'row' | 'column',
   extremum: 'start' | 'end',
   { areas }: Grid
-): number => fn(...Object.keys(areas).map(cell => areas[cell][direction][extremum]))
+): number {
+  return fn(...Object.keys(areas).map((cell) => areas[cell][direction][extremum]))
+}
 
-export const minColumnStart = (grid: Grid): number => find(Math.min, 'column', 'start', grid)
+/**
+ * Mins column start
+ * @param grid
+ * @returns column start
+ */
+export function minColumnStart(grid: Grid): number {
+  return find(Math.min, 'column', 'start', grid)
+}
 
-export const maxColumnStart = (grid: Grid): number => find(Math.max, 'column', 'start', grid)
+/**
+ * Maxs column start
+ * @param grid
+ * @returns column start
+ */
+export function maxColumnStart(grid: Grid): number {
+  return find(Math.max, 'column', 'start', grid)
+}
 
-export const minRowStart = (grid: Grid): number => find(Math.min, 'row', 'start', grid)
+/**
+ * Mins row start
+ * @param grid
+ * @returns row start
+ */
+export function minRowStart(grid: Grid): number {
+  return find(Math.min, 'row', 'start', grid)
+}
 
-export const maxRowStart = (grid: Grid): number => find(Math.max, 'row', 'start', grid)
+/**
+ * Maxs row start
+ * @param grid
+ * @returns row start
+ */
+export function maxRowStart(grid: Grid): number {
+  return find(Math.max, 'row', 'start', grid)
+}
 
-export const minColumnEnd = (grid: Grid): number => find(Math.min, 'column', 'end', grid)
+/**
+ * Mins column end
+ * @param grid
+ * @returns column end
+ */
+export function minColumnEnd(grid: Grid): number {
+  return find(Math.min, 'column', 'end', grid)
+}
 
-export const maxColumnEnd = (grid: Grid): number => find(Math.max, 'column', 'end', grid)
+/**
+ * Maxs column end
+ * @param grid
+ * @returns column end
+ */
+export function maxColumnEnd(grid: Grid): number {
+  return find(Math.max, 'column', 'end', grid)
+}
 
-export const minRowEnd = (grid: Grid): number => find(Math.min, 'row', 'end', grid)
+/**
+ * Mins row end
+ * @param grid
+ * @returns row end
+ */
+export function minRowEnd(grid: Grid): number {
+  return find(Math.min, 'row', 'end', grid)
+}
 
-export const maxRowEnd = (grid: Grid): number => find(Math.max, 'row', 'end', grid)
+/**
+ * Maxs row end
+ * @param grid
+ * @returns row end
+ */
+export function maxRowEnd(grid: Grid): number {
+  return find(Math.max, 'row', 'end', grid)
+}

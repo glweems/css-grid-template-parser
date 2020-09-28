@@ -1,4 +1,4 @@
-import { grid } from '../src/grid'
+import { grid } from '../src'
 
 test('should parse the area template', () => {
   const template = `
@@ -14,13 +14,13 @@ test('should parse the area template', () => {
     areas: {
       a: {
         column: { start: 1, end: 4, span: 3 },
-        row: { start: 1, end: 4, span: 3 }
+        row: { start: 1, end: 4, span: 3 },
       },
       b: {
         column: { start: 4, end: 5, span: 1 },
-        row: { start: 1, end: 4, span: 3 }
-      }
-    }
+        row: { start: 1, end: 4, span: 3 },
+      },
+    },
   }
 
   expect(test).toEqual(expected)
@@ -40,13 +40,13 @@ test('should parse the area template', () => {
     areas: {
       a: {
         column: { start: 1, end: 3, span: 2 },
-        row: { start: 1, end: 4, span: 3 }
+        row: { start: 1, end: 4, span: 3 },
       },
       b: {
         column: { start: 4, end: 5, span: 1 },
-        row: { start: 1, end: 4, span: 3 }
-      }
-    }
+        row: { start: 1, end: 4, span: 3 },
+      },
+    },
   }
 
   expect(test).toEqual(expected)
@@ -67,9 +67,9 @@ test('should parse the area template', () => {
     areas: {
       a: {
         column: { start: 2, end: 4, span: 2 },
-        row: { start: 2, end: 4, span: 2 }
-      }
-    }
+        row: { start: 2, end: 4, span: 2 },
+      },
+    },
   }
 
   expect(test).toEqual(expected)

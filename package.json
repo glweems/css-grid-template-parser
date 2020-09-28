@@ -1,8 +1,13 @@
 {
   "name": "css-grid-template-parser",
-  "version": "0.0.0",
-  "description": "",
-  "keywords": ["css", "grid", "css-grid", "template", "parser"],
+  "version": "0.0.1",
+  "description": "A simple CSS Grid template parser",
+  "keywords": [
+    "grid",
+    "grid-layout",
+    "template",
+    "parser"
+  ],
   "main": "dist/css-grid-template-parser.umd.js",
   "module": "dist/css-grid-template-parser.es5.js",
   "typings": "dist/types/css-grid-template-parser.d.ts",

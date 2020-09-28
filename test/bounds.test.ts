@@ -6,10 +6,10 @@ import {
   minColumnEnd,
   maxColumnEnd,
   minRowEnd,
-  maxRowEnd
-} from '../src/bounds'
+  maxRowEnd,
+} from '../src'
 
-import { grid } from '../src/grid'
+import { grid } from '../src'
 
 test('should return the min column start of the grid', () => {
   const template = `

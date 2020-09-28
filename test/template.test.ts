@@ -1,4 +1,4 @@
-import { template } from '../src/template'
+import { template } from '../src'
 
 test('should build a template from a grid object', () => {
   const grid = {
@@ -7,13 +7,13 @@ test('should build a template from a grid object', () => {
     areas: {
       a: {
         column: { start: 1, end: 4, span: 3 },
-        row: { start: 1, end: 4, span: 3 }
+        row: { start: 1, end: 4, span: 3 },
       },
       b: {
         column: { start: 4, end: 5, span: 1 },
-        row: { start: 1, end: 4, span: 3 }
-      }
-    }
+        row: { start: 1, end: 4, span: 3 },
+      },
+    },
   }
 
   const test = template(grid)
@@ -29,13 +29,13 @@ test('should build a template from a grid object', () => {
     areas: {
       a: {
         column: { start: 1, end: 3, span: 2 },
-        row: { start: 1, end: 3, span: 2 }
+        row: { start: 1, end: 3, span: 2 },
       },
       b: {
         column: { start: 3, end: 5, span: 2 },
-        row: { start: 3, end: 5, span: 2 }
-      }
-    }
+        row: { start: 3, end: 5, span: 2 },
+      },
+    },
   }
 
   const test = template(grid)
@@ -51,13 +51,13 @@ test('should build a template from a grid object', () => {
     areas: {
       a: {
         column: { start: 2, end: 4, span: 2 },
-        row: { start: 2, end: 4, span: 2 }
+        row: { start: 2, end: 4, span: 2 },
       },
       b: {
         column: { start: 4, end: 6, span: 2 },
-        row: { start: 4, end: 6, span: 2 }
-      }
-    }
+        row: { start: 4, end: 6, span: 2 },
+      },
+    },
   }
 
   const test = template(grid)

@@ -13,14 +13,14 @@ npm install --save css-grid-template-parser
 ### Parse a grid template
 
 ```js
-import { grid } from 'css-grid-template-parser'
+import { grid } from 'css-grid-template-parser';
 
 const areas = grid(`
   "a a a b b"
   "a a a b b"
   ". . c c c"
   "d d d d d"
-`)
+`);
 
 // → {
 //   width: 5,
@@ -49,7 +49,7 @@ const areas = grid(`
 ### Build a grid template
 
 ```js
-import { template } from 'css-grid-template-parser'
+import { template } from 'css-grid-template-parser';
 
 const areas = template({
   width: 5,
@@ -64,7 +64,7 @@ const areas = template({
       row: { start: 3, end: 5, span: 2 },
     },
   },
-})
+});
 
 // → `"a a a . ."
 //    "a a a . ."
@@ -75,27 +75,27 @@ const areas = template({
 An helper is provided to declare areas more intuitively. The following example is equivalent to the previous:
 
 ```js
-import { template, area } from 'css-grid-template-parser'
+import { template, area } from 'css-grid-template-parser';
 
 const a = area({
   x: 0,
   y: 0,
   width: 3,
   height: 2,
-})
+});
 
 const b = area({
   x: 2,
   y: 2,
   width: 3,
   height: 2,
-})
+});
 
 const areas = template({
   width: 5,
   height: 4,
   areas: { a, b },
-})
+});
 
 // → `"a a a . ."
 //    "a a a . ."
@@ -120,14 +120,14 @@ _[Grid](#grid)_ An object representation of the grid template.
 #### Example
 
 ```js
-import { grid } from 'css-grid-template-parser'
+import { grid } from 'css-grid-template-parser';
 
 const areas = grid(`
   "a a a b b"
   "a a a b b"
   ". . c c c"
   "d d d d d"
-`)
+`);
 
 // → {
 //   width: 5,
@@ -170,7 +170,7 @@ _string_ The equivalent grid template.
 #### Example
 
 ```js
-import { template } from 'css-grid-template-parser'
+import { template } from 'css-grid-template-parser';
 
 const areas = template({
   width: 5,
@@ -185,7 +185,7 @@ const areas = template({
       row: { start: 3, end: 5, span: 2 },
     },
   },
-})
+});
 
 // → `"a a a . ."
 //    "a a a . ."
@@ -210,12 +210,12 @@ _[Rect](#rect)_ The equivalent rect.
 #### Example
 
 ```js
-import { rect } from 'css-grid-template-parser'
+import { rect } from 'css-grid-template-parser';
 
 const r = rect({
   column: { start: 1, end: 4, span: 3 },
   row: { start: 1, end: 3, span: 2 },
-})
+});
 
 // → {
 //     x: 0,
@@ -242,14 +242,14 @@ _[Area](#area)_ The equivalent area.
 #### Example
 
 ```js
-import { area } from 'css-grid-template-parser'
+import { area } from 'css-grid-template-parser';
 
 const a = area({
   x: 0,
   y: 0,
   width: 3,
   height: 2,
-})
+});
 
 // → {
 //     column: {start: 1, end: 4, span: 3},
@@ -274,7 +274,7 @@ _number_ The min column start.
 #### Example
 
 ```js
-import { grid, minColumnStart } from 'css-grid-template-parser'
+import { grid, minColumnStart } from 'css-grid-template-parser';
 
 const min = minColumnStart(
   grid(`
@@ -282,7 +282,7 @@ const min = minColumnStart(
   ". b b b b"
   ". . . c c"
 `)
-)
+);
 
 // → 2
 ```
@@ -304,7 +304,7 @@ _number_ The max column start.
 #### Example
 
 ```js
-import { grid, maxColumnStart } from 'css-grid-template-parser'
+import { grid, maxColumnStart } from 'css-grid-template-parser';
 
 const max = maxColumnStart(
   grid(`
@@ -312,7 +312,7 @@ const max = maxColumnStart(
   ". b b b b"
   ". . . c c"
 `)
-)
+);
 
 // → 4
 ```
@@ -334,7 +334,7 @@ _number_ The min column end.
 #### Example
 
 ```js
-import { grid, minColumnEnd } from 'css-grid-template-parser'
+import { grid, minColumnEnd } from 'css-grid-template-parser';
 
 const min = minColumnEnd(
   grid(`
@@ -342,7 +342,7 @@ const min = minColumnEnd(
   "b b b b ."
   "c c c . ."
 `)
-)
+);
 
 // → 3
 ```
@@ -364,7 +364,7 @@ _number_ The max column end.
 #### Example
 
 ```js
-import { grid, maxColumnEnd } from 'css-grid-template-parser'
+import { grid, maxColumnEnd } from 'css-grid-template-parser';
 
 const max = maxColumnEnd(
   grid(`
@@ -372,7 +372,7 @@ const max = maxColumnEnd(
   "b b b b ."
   "c c c . ."
 `)
-)
+);
 
 // → 5
 ```
@@ -394,7 +394,7 @@ _number_ The min row start.
 #### Example
 
 ```js
-import { grid, minRowStart } from 'css-grid-template-parser'
+import { grid, minRowStart } from 'css-grid-template-parser';
 
 const min = minRowStart(
   grid(`
@@ -403,7 +403,7 @@ const min = minRowStart(
   "a a b b"
   "a a b b"
 `)
-)
+);
 
 // → 2
 ```
@@ -425,7 +425,7 @@ _number_ The max row start.
 #### Example
 
 ```js
-import { grid, maxRowStart } from 'css-grid-template-parser'
+import { grid, maxRowStart } from 'css-grid-template-parser';
 
 const max = maxRowStart(
   grid(`
@@ -434,7 +434,7 @@ const max = maxRowStart(
   "a a b b"
   "a a b b"
 `)
-)
+);
 
 // → 3
 ```
@@ -456,7 +456,7 @@ _number_ The min row end.
 #### Example
 
 ```js
-import { grid, minRowEnd } from 'css-grid-template-parser'
+import { grid, minRowEnd } from 'css-grid-template-parser';
 
 const min = minRowEnd(
   grid(`
@@ -465,7 +465,7 @@ const min = minRowEnd(
   ". . b b"
   ". . . ."
 `)
-)
+);
 
 // → 3
 ```
@@ -487,7 +487,7 @@ _number_ The max row end.
 #### Example
 
 ```js
-import { grid, maxRowEnd } from 'css-grid-template-parser'
+import { grid, maxRowEnd } from 'css-grid-template-parser';
 
 const max = maxRowEnd(
   grid(`
@@ -496,7 +496,7 @@ const max = maxRowEnd(
   ". . b b"
   ". . . ."
 `)
-)
+);
 
 // → 4
 ```
@@ -507,9 +507,9 @@ const max = maxRowEnd(
 
 ```ts
 export interface Track {
-  start: number
-  end: number
-  span: number
+  start: number;
+  end: number;
+  span: number;
 }
 ```
 
@@ -517,19 +517,19 @@ export interface Track {
 
 ```ts
 type Area = {
-  row: Track
-  column: Track
-}
+  row: Track;
+  column: Track;
+};
 ```
 
 ### `Rect`
 
 ```ts
 export interface Rect {
-  x: number
-  y: number
-  width: number
-  height: number
+  x: number;
+  y: number;
+  width: number;
+  height: number;
 }
 ```
 
@@ -537,9 +537,9 @@ export interface Rect {
 
 ```ts
 export interface Grid {
-  width: number
-  height: number
-  areas: Record<string, Area>
+  width: number;
+  height: number;
+  areas: Record<string, Area>;
 }
 ```
 

@@ -1,4 +1,4 @@
-import { template } from '../src/css-grid-template-parser'
+import { template } from '../src/css-grid-template-parser';
 
 test('should build a template from a grid object', () => {
   const grid = {
@@ -14,13 +14,13 @@ test('should build a template from a grid object', () => {
         row: { start: 1, end: 4, span: 3 },
       },
     },
-  }
+  };
 
-  const test = template(grid)
-  const expected = `"a a a b"\n"a a a b"\n"a a a b"`
+  const test = template(grid);
+  const expected = `"a a a b"\n"a a a b"\n"a a a b"`;
 
-  expect(test).toBe(expected)
-})
+  expect(test).toBe(expected);
+});
 
 test('should build a template from a grid object', () => {
   const grid = {
@@ -36,13 +36,13 @@ test('should build a template from a grid object', () => {
         row: { start: 3, end: 5, span: 2 },
       },
     },
-  }
+  };
 
-  const test = template(grid)
-  const expected = `"a a . ."\n"a a . ."\n". . b b"\n". . b b"`
+  const test = template(grid);
+  const expected = `"a a . ."\n"a a . ."\n". . b b"\n". . b b"`;
 
-  expect(test).toBe(expected)
-})
+  expect(test).toBe(expected);
+});
 
 test('should build a template from a grid object', () => {
   const grid = {
@@ -58,10 +58,10 @@ test('should build a template from a grid object', () => {
         row: { start: 4, end: 6, span: 2 },
       },
     },
-  }
+  };
 
-  const test = template(grid)
-  const expected = `". . . . . ."\n". a a . . ."\n". a a . . ."\n". . . b b ."\n". . . b b ."\n". . . . . ."`
+  const test = template(grid);
+  const expected = `". . . . . ."\n". a a . . ."\n". a a . . ."\n". . . b b ."\n". . . b b ."\n". . . . . ."`;
 
-  expect(test).toBe(expected)
-})
+  expect(test).toBe(expected);
+});

@@ -1,8 +1,8 @@
-export { area, rect, track } from './primitives'
+export { area, rect, track } from './primitives';
 
-export { default as grid } from './grid'
+export { default as grid } from './grid';
 
-export { default as template } from './template'
+export { default as template } from './template';
 
 export {
   minColumnStart,
@@ -13,6 +13,6 @@ export {
   maxColumnEnd,
   minRowEnd,
   maxRowEnd,
-} from './bounds'
+} from './bounds';
 
-export { Grid, Area, Track, Rect } from './types'
+export { Grid, Area, Track, Rect } from './types';

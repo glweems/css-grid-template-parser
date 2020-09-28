@@ -1,4 +1,4 @@
-import { Grid } from './types'
+import { Grid } from './types';
 
 function find(
   fn: (...args: number[]) => number,
@@ -6,7 +6,9 @@ function find(
   extremum: 'start' | 'end',
   { areas }: Grid
 ): number {
-  return fn(...Object.keys(areas).map((cell) => areas[cell][direction][extremum]))
+  return fn(
+    ...Object.keys(areas).map((cell) => areas[cell][direction][extremum])
+  );
 }
 
 /**
@@ -15,7 +17,7 @@ function find(
  * @returns column start
  */
 export function minColumnStart(grid: Grid): number {
-  return find(Math.min, 'column', 'start', grid)
+  return find(Math.min, 'column', 'start', grid);
 }
 
 /**
@@ -24,7 +26,7 @@ export function minColumnStart(grid: Grid): number {
  * @returns column start
  */
 export function maxColumnStart(grid: Grid): number {
-  return find(Math.max, 'column', 'start', grid)
+  return find(Math.max, 'column', 'start', grid);
 }
 
 /**
@@ -33,7 +35,7 @@ export function maxColumnStart(grid: Grid): number {
  * @returns row start
  */
 export function minRowStart(grid: Grid): number {
-  return find(Math.min, 'row', 'start', grid)
+  return find(Math.min, 'row', 'start', grid);
 }
 
 /**
@@ -42,7 +44,7 @@ export function minRowStart(grid: Grid): number {
  * @returns row start
  */
 export function maxRowStart(grid: Grid): number {
-  return find(Math.max, 'row', 'start', grid)
+  return find(Math.max, 'row', 'start', grid);
 }
 
 /**
@@ -51,7 +53,7 @@ export function maxRowStart(grid: Grid): number {
  * @returns column end
  */
 export function minColumnEnd(grid: Grid): number {
-  return find(Math.min, 'column', 'end', grid)
+  return find(Math.min, 'column', 'end', grid);
 }
 
 /**
@@ -60,7 +62,7 @@ export function minColumnEnd(grid: Grid): number {
  * @returns column end
  */
 export function maxColumnEnd(grid: Grid): number {
-  return find(Math.max, 'column', 'end', grid)
+  return find(Math.max, 'column', 'end', grid);
 }
 
 /**
@@ -69,7 +71,7 @@ export function maxColumnEnd(grid: Grid): number {
  * @returns row end
  */
 export function minRowEnd(grid: Grid): number {
-  return find(Math.min, 'row', 'end', grid)
+  return find(Math.min, 'row', 'end', grid);
 }
 
 /**
@@ -78,5 +80,5 @@ export function minRowEnd(grid: Grid): number {
  * @returns row end
  */
 export function maxRowEnd(grid: Grid): number {
-  return find(Math.max, 'row', 'end', grid)
+  return find(Math.max, 'row', 'end', grid);
 }

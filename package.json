@@ -24,7 +24,9 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "format": "prettier --ignore-path .gitignore --write \"./**/*.{ts,tsx,json,yml,md}\"",
+    "lint": "npm run format && eslint --ignore-path .gitignore \"./**/*.{ts,tsx}\"",
+    "lint:fix": "npm run format && npm run lint --fix",
     "prebuild": "rimraf dist",
     "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
     "start": "rollup -c rollup.config.ts -w",
@@ -78,8 +80,9 @@
     ]
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 80
   },
   "commitlint": {
     "extends": [
@@ -90,12 +93,27 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@types/jest": "^26.0.14",
+    "@types/lodash.camelcase": "^4.3.6",
     "@types/node": "^14.11.2",
+    "@types/rollup-plugin-json": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "colors": "^1.4.0",
     "commitizen": "^4.2.1",
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-config-stylelint": "^12.0.0",
+    "eslint-plugin-flowtype": "5.2.0",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "jest-config": "^26.4.2",
@@ -106,9 +124,9 @@
     "replace-in-file": "^6.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.28.2",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-json": "^3.1.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.6.2",
     "rollup-plugin-typescript2": "^0.27.3",
     "semantic-release": "^17.1.2",
@@ -116,9 +134,6 @@
     "travis-deploy-once": "^5.0.9",
     "ts-jest": "^26.4.0",
     "ts-node": "^9.0.0",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^9.0.0",
     "typedoc": "^0.19.2",
     "typescript": "^4.0.3"
   },

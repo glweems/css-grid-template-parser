@@ -1,13 +1,13 @@
-import { grid } from '../src/css-grid-template-parser'
+import { grid } from '../src/css-grid-template-parser';
 
 test('should parse the area template', () => {
   const template = `
     "a a a b"
     "a a a b"
     'a a a b'
-  `
+  `;
 
-  const test = grid(template)
+  const test = grid(template);
   const expected = {
     width: 4,
     height: 3,
@@ -21,19 +21,19 @@ test('should parse the area template', () => {
         row: { start: 1, end: 4, span: 3 },
       },
     },
-  }
+  };
 
-  expect(test).toEqual(expected)
-})
+  expect(test).toEqual(expected);
+});
 
 test('should parse the area template', () => {
   const template = `
     "a a . b"
     "a a . b"
     'a a . b'
-  `
+  `;
 
-  const test = grid(template)
+  const test = grid(template);
   const expected = {
     width: 4,
     height: 3,
@@ -47,10 +47,10 @@ test('should parse the area template', () => {
         row: { start: 1, end: 4, span: 3 },
       },
     },
-  }
+  };
 
-  expect(test).toEqual(expected)
-})
+  expect(test).toEqual(expected);
+});
 
 test('should parse the area template', () => {
   const template = `
@@ -58,9 +58,9 @@ test('should parse the area template', () => {
     ". a a ."
     ". a a ."
     ". . . ."
-  `
+  `;
 
-  const test = grid(template)
+  const test = grid(template);
   const expected = {
     width: 4,
     height: 4,
@@ -70,7 +70,7 @@ test('should parse the area template', () => {
         row: { start: 2, end: 4, span: 2 },
       },
     },
-  }
+  };
 
-  expect(test).toEqual(expected)
-})
+  expect(test).toEqual(expected);
+});

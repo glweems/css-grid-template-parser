@@ -1,4 +1,4 @@
-import { Grid } from './types'
+import { Grid } from './types';
 /**
  * Matching area
  * @param areas
@@ -11,7 +11,7 @@ function matchingArea(areas: Grid['areas'], row: number, column: number) {
     areas[area].row.start <= row + 1 &&
     areas[area].row.end > row + 1 &&
     areas[area].column.start <= column + 1 &&
-    areas[area].column.end > column + 1
+    areas[area].column.end > column + 1;
 }
 /**
  * Gets columns
@@ -29,15 +29,17 @@ function getColumns(
   current: number = 0,
   cols: string = ''
 ): string {
-  const area = (areas as any).find(matchingArea(grid.areas, row, current) as any)
+  const area = (areas as any).find(
+    matchingArea(grid.areas, row, current) as any
+  );
 
-  cols += typeof area === 'string' ? area : '.'
+  cols += typeof area === 'string' ? area : '.';
 
   if (current < grid.width - 1) {
-    return getColumns(areas, grid, row, current + 1, `${cols} `)
+    return getColumns(areas, grid, row, current + 1, `${cols} `);
   }
 
-  return cols
+  return cols;
 }
 /**
  * Gets rows
@@ -47,14 +49,19 @@ function getColumns(
  * @param [rows]
  * @returns rows
  */
-function getRows(areas: Array<string>, grid: Grid, current: number = 0, rows: string = ''): string {
-  rows += `"${getColumns(areas, grid, current)}"`
+function getRows(
+  areas: Array<string>,
+  grid: Grid,
+  current: number = 0,
+  rows: string = ''
+): string {
+  rows += `"${getColumns(areas, grid, current)}"`;
 
   if (current < grid.height - 1) {
-    return getRows(areas, grid, current + 1, `${rows}\n`)
+    return getRows(areas, grid, current + 1, `${rows}\n`);
   }
 
-  return rows
+  return rows;
 }
 /**
  *
@@ -81,5 +88,5 @@ function getRows(areas: Array<string>, grid: Grid, current: number = 0, rows: st
 //    ". . b b b"`
  */
 export default function template(grid: Grid): string {
-  return getRows(Object.keys(grid.areas), grid)
+  return getRows(Object.keys(grid.areas), grid);
 }

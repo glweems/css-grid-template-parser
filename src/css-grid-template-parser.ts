@@ -3,6 +3,7 @@ export { area, rect, track } from './primitives';
 export { default as grid } from './grid';
 
 export { default as template } from './template';
+export { default as flatten } from './flatten';
 
 export {
   minColumnStart,
@@ -15,4 +16,4 @@ export {
   maxRowEnd,
 } from './bounds';
 
-export { Grid, Area, Track, Rect } from './types';
+export { Grid, Area, Track, Rect, Unit, Entry } from './types';

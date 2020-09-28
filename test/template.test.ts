@@ -1,4 +1,4 @@
-import { template } from '../src'
+import { template } from '../src/css-grid-template-parser'
 
 test('should build a template from a grid object', () => {
   const grid = {

@@ -1,4 +1,4 @@
-import { track, area, rect } from '../src'
+import { track, area, rect } from '../src/css-grid-template-parser'
 
 test('should return a track object', () => {
   const test = track(1, 3)

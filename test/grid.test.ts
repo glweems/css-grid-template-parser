@@ -1,4 +1,4 @@
-import { grid } from '../src'
+import { grid } from '../src/css-grid-template-parser'
 
 test('should parse the area template', () => {
   const template = `

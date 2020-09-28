@@ -7,9 +7,8 @@ import {
   maxColumnEnd,
   minRowEnd,
   maxRowEnd,
-} from '../src'
-
-import { grid } from '../src'
+  grid,
+} from '../src/css-grid-template-parser'
 
 test('should return the min column start of the grid', () => {
   const template = `

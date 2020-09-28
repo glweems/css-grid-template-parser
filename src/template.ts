@@ -1,4 +1,4 @@
-import { Grid, Area } from './'
+import { Grid } from './types'
 /**
  * Matching area
  * @param areas

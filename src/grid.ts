@@ -1,4 +1,5 @@
-import { Area, Grid, track } from './'
+import { track } from './primitives'
+import { Area, Grid } from './types'
 
 const sep: RegExp = /['"]\s*['"]?/g
 const ws: RegExp = /\s+/g

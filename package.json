@@ -1,6 +1,6 @@
 {
-  "name": "css-grid-template-parser",
-  "version": "0.0.1",
+  "name": "@glweems/css-grid-template-parser",
+  "version": "0.0.2",
   "description": "A simple CSS Grid template parser",
   "keywords": [
     "grid",
@@ -8,6 +8,7 @@
     "template",
     "parser"
   ],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "main": "dist/css-grid-template-parser.umd.js",
   "module": "dist/css-grid-template-parser.es5.js",
   "typings": "dist/types/css-grid-template-parser.d.ts",

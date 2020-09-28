@@ -1,9 +1,10 @@
+/* typescript-disable */
 const { cd, exec, echo, touch } = require('shelljs');
 const { readFileSync } = require('fs');
 const url = require('url');
 
 let repoUrl;
-const pkg = JSON.parse(readFileSync('package.json') as any);
+const pkg = JSON.parse(readFileSync('package.json') as unknown);
 if (typeof pkg.repository === 'object') {
   if (!pkg.repository.hasOwnProperty('url')) {
     throw new Error('URL does not exist in repository section');

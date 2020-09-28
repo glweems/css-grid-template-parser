@@ -26,12 +26,10 @@ function getColumns(
   areas: string[],
   grid: Grid,
   row: number,
-  current: number = 0,
-  cols: string = ''
+  current = 0,
+  cols = ''
 ): string {
-  const area = (areas as any).find(
-    matchingArea(grid.areas, row, current) as any
-  );
+  const area = areas.find(matchingArea(grid.areas, row, current));
 
   cols += typeof area === 'string' ? area : '.';
 
@@ -52,8 +50,8 @@ function getColumns(
 function getRows(
   areas: Array<string>,
   grid: Grid,
-  current: number = 0,
-  rows: string = ''
+  current = 0,
+  rows = ''
 ): string {
   rows += `"${getColumns(areas, grid, current)}"`;
 

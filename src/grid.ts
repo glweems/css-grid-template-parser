@@ -1,8 +1,8 @@
 import { track } from './primitives';
 import { Area, Grid } from './types';
 
-const sep: RegExp = /['"]\s*['"]?/g;
-const ws: RegExp = /\s+/g;
+const sep = /['"]\s*['"]?/g;
+const ws = /\s+/g;
 
 const cleanTpl = (t: string): string => t.trim().slice(1, -1);
 const cleanLine = (l: string): string => l.replace(ws, ' ').trim();
